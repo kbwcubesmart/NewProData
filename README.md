@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# NewProData
-=======
 # NewProdata - Company Website
 
 A modern, responsive React.js website for NewProdata, an IT services and solutions provider specializing in data warehousing, analytics, and full-stack development.
@@ -158,4 +155,3 @@ This project is proprietary software owned by NewProdata.
 ## Contact
 
 For questions or support, please contact us at info@newprodata.com
->>>>>>> 2ed056f (Initial commit)

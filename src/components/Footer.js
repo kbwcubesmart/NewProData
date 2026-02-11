@@ -39,12 +39,11 @@ const Footer = () => {
               viewport={{ once: true }}
               className="space-y-4"
             >
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">N</span>
-                </div>
-                <span className="font-bold text-xl">NewProdata</span>
-              </div>
+              <img
+                src="/newprodata-removebg-preview.png"
+                alt="NewProdata"
+                className="h-10 w-auto"
+              />
               <p className="text-gray-300 text-sm leading-relaxed">
                 Leading provider of IT services and solutions specializing in data warehousing, 
                 analytics, and full-stack development. We help businesses transform their data 

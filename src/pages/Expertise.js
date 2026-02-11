@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { skills } from '../data/skills';
 import { Code, Database, Cloud, Wrench } from 'lucide-react';
+import ArrowSnakeBackground from '../pages/ArrowSnakeBackground';
+import CircularArrowTrain from '../pages/CircularArrowTrain';
+
 
 const Expertise = () => {
   const [selectedCategory, setSelectedCategory] = useState('Data & Analytics');
@@ -45,37 +48,44 @@ const Expertise = () => {
     return '#F3F4F6';
   };
 
-  const getTechTextColor = (name) => {
-    return '#0F172A';
-  };
-
+  const getTechTextColor = () => '#0F172A';
   const getTechIconLetter = (name) => {
     const parts = name.split(' ');
-    if (parts.length > 1) return (parts[0][0] + parts[1][0]).toUpperCase();
-    return name.charAt(0).toUpperCase();
+    return parts.length > 1
+      ? (parts[0][0] + parts[1][0]).toUpperCase()
+      : name.charAt(0).toUpperCase();
   };
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-16 relative">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-primary-600 to-primary-800 text-white">
-        <div className="container-max">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Expertise & Tech Stack
-            </h1>
-            <p className="text-xl text-primary-100 leading-relaxed">
-              Our expertise spans across modern technologies and tools to deliver cutting-edge solutions
-            </p>
-          </motion.div>
-        </div>
-      </section>
+<section className="section-padding bg-gradient-to-br from-primary-600 to-primary-800 text-white relative overflow-hidden">
+  {/* Circular snake-like arrow background */}
+  <CircularArrowTrain
+    trainCount={4}       // Number of arrow groups
+    arrowsPerTrain={8}   // Arrows in each group
+    radius={180}         // Circle radius
+    duration={15}        // Slower rotation for smooth snake effect
+    centerX={350}
+    centerY={250}
+  />
 
+  {/* Content */}
+  <div className="relative z-10 container-max text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <h1 className="text-4xl md:text-5xl font-bold mb-6">
+        Expertise & Tech Stack
+      </h1>
+      <p className="text-xl text-primary-100 leading-relaxed">
+        Our expertise spans across modern technologies and tools to deliver cutting-edge solutions
+      </p>
+    </motion.div>
+  </div>
+</section>
       {/* Category Tabs */}
       <section className="section-padding bg-white">
         <div className="container-max">
@@ -99,22 +109,22 @@ const Expertise = () => {
               .map(name => skills.find(c => c.category === name))
               .filter(Boolean)
               .map((category) => {
-              const IconComponent = categoryIcons[category.category];
-              return (
-                <button
-                  key={category.category}
-                  onClick={() => setSelectedCategory(category.category)}
-                  className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                    selectedCategory === category.category
-                      ? 'bg-primary-600 text-white shadow-lg'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  <IconComponent className="w-5 h-5" />
-                  <span>{category.category}</span>
-                </button>
-              );
-            })}
+                const IconComponent = categoryIcons[category.category];
+                return (
+                  <button
+                    key={category.category}
+                    onClick={() => setSelectedCategory(category.category)}
+                    className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
+                      selectedCategory === category.category
+                        ? 'bg-primary-600 text-white shadow-lg'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                  >
+                    <IconComponent className="w-5 h-5" />
+                    <span>{category.category}</span>
+                  </button>
+                );
+              })}
           </div>
 
           {/* Technologies Grid */}
@@ -136,9 +146,14 @@ const Expertise = () => {
                   className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
                 >
                   <div className="text-center">
-                    <div className="w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4"
-                         style={{ backgroundColor: getTechBgColor(tech.name) }}>
-                      <span className="text-2xl font-bold" style={{ color: getTechTextColor(tech.name) }}>
+                    <div
+                      className="w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4"
+                      style={{ backgroundColor: getTechBgColor(tech.name) }}
+                    >
+                      <span
+                        className="text-2xl font-bold"
+                        style={{ color: getTechTextColor(tech.name) }}
+                      >
                         {getTechIconLetter(tech.name)}
                       </span>
                     </div>
@@ -188,5 +203,3 @@ const Expertise = () => {
 };
 
 export default Expertise;
-
-

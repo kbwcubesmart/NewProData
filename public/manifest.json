@@ -3,14 +3,14 @@
   "name": "NewProdata - IT Services & Solutions",
   "icons": [
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><circle cx='96' cy='96' r='86' fill='%2320b2aa'/><text x='96' y='125' font-family='Arial, sans-serif' font-size='68' font-weight='bold' text-anchor='middle' fill='white'>N</text></svg>",
+      "src": "npd-circle.png",
       "sizes": "192x192",
-      "type": "image/svg+xml"
+      "type": "image/png"
     },
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='230' fill='%2320b2aa'/><text x='256' y='335' font-family='Arial, sans-serif' font-size='180' font-weight='bold' text-anchor='middle' fill='white'>N</text></svg>",
+      "src": "npd-circle.png",
       "sizes": "512x512",
-      "type": "image/svg+xml"
+      "type": "image/png"
     }
   ],
   "start_url": ".",

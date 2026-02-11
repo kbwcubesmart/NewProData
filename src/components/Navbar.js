@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -16,6 +17,9 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const isHome = location.pathname === '/';
+  const useDarkLogo = scrolled || !isHome;
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -38,32 +42,47 @@ const Navbar = () => {
       <div className="container-max">
         <div className="flex items-center justify-between h-16 px-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">N</span>
-            </div>
-            <span className={`font-bold text-xl ${scrolled ? 'text-gray-900' : 'text-white'}`}>
-              NewProdata
-            </span>
+          <Link to="/" className="flex items-center">
+            <img
+              src={useDarkLogo ? "/Newprodata_logo.png" : "/newprodata-removebg-preview.png"}
+              alt="NewProdata"
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`font-medium transition-colors duration-200 ${
-                  location.pathname === item.path
-                    ? 'text-primary-600'
-                    : scrolled
-                    ? 'text-gray-700 hover:text-primary-600'
-                    : 'text-white hover:text-primary-200'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+          <div
+            className="hidden md:flex items-center space-x-8"
+            onMouseLeave={() => setHoveredItem(null)}
+          >
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.path;
+              const showUnderline = hoveredItem ? hoveredItem === item.path : isActive;
+
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  onMouseEnter={() => setHoveredItem(item.path)}
+                  className={`relative pb-2 font-medium transition-colors duration-200 ${
+                    isActive
+                      ? 'text-primary-600'
+                      : useDarkLogo
+                      ? 'text-gray-700 hover:text-primary-600'
+                      : 'text-white hover:text-primary-200'
+                  }`}
+                >
+                  {item.name}
+                  {showUnderline && (
+                    <motion.div
+                      layoutId="navbar-underline"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-600 rounded-full"
+                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                    />
+                  )}
+                </Link>
+              );
+            })}
             <Link
               to="/contact"
               className="btn-primary"
