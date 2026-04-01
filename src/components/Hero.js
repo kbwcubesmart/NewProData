@@ -158,10 +158,7 @@ const Hero = () => {
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
                   transition={{ delay: 1, duration: 1.5 }}
-                  x1="50%"
-                  y1="50%"
-                  x2="25%"
-                  y2="25%"
+                  x1="50%" y1="50%" x2="25%" y2="25%"
                   stroke="rgba(32, 178, 170, 0.3)"
                   strokeWidth="2"
                   strokeDasharray="5,5"
@@ -170,10 +167,7 @@ const Hero = () => {
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
                   transition={{ delay: 1.2, duration: 1.5 }}
-                  x1="50%"
-                  y1="50%"
-                  x2="75%"
-                  y2="35%"
+                  x1="50%" y1="50%" x2="75%" y2="35%"
                   stroke="rgba(32, 178, 170, 0.3)"
                   strokeWidth="2"
                   strokeDasharray="5,5"
@@ -182,10 +176,7 @@ const Hero = () => {
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
                   transition={{ delay: 1.4, duration: 1.5 }}
-                  x1="50%"
-                  y1="50%"
-                  x2="30%"
-                  y2="75%"
+                  x1="50%" y1="50%" x2="30%" y2="75%"
                   stroke="rgba(32, 178, 170, 0.3)"
                   strokeWidth="2"
                   strokeDasharray="5,5"
@@ -194,85 +185,51 @@ const Hero = () => {
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
                   transition={{ delay: 1.6, duration: 1.5 }}
-                  x1="50%"
-                  y1="50%"
-                  x2="80%"
-                  y2="85%"
+                  x1="50%" y1="50%" x2="80%" y2="85%"
                   stroke="rgba(32, 178, 170, 0.3)"
                   strokeWidth="2"
                   strokeDasharray="5,5"
                 />
               </svg>
 
-              {/* Floating Cards */}
+              {/* Floating Cards - All Equal Size */}
               <motion.div
-                animate={{
-                  y: [0, -15, 0],
-                  rotate: [0, 3, 0]
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="absolute top-0 left-0 w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 bg-primary-500/10 backdrop-blur-sm rounded-2xl border border-primary-500/20 p-2 sm:p-4"
+                animate={{ y: [0, -15, 0], rotate: [0, 3, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-0 left-0 w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 bg-primary-500/10 backdrop-blur-sm rounded-2xl border border-primary-500/20 p-2 sm:p-4"
               >
                 <div className="w-full h-full bg-gradient-to-br from-primary-400/20 to-primary-600/20 rounded-xl flex items-center justify-center">
-                  <span className="text-primary-400 font-bold text-xs sm:text-sm">Data Analytics</span>
+                  <span className="text-primary-400 font-bold text-xs sm:text-sm text-center leading-tight">Data Analytics</span>
                 </div>
               </motion.div>
 
               <motion.div
-                animate={{
-                  y: [0, 15, 0],
-                  rotate: [0, -3, 0]
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1
-                }}
-                className="absolute top-8 sm:top-16 right-0 w-16 h-16 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-primary-500/10 backdrop-blur-sm rounded-2xl border border-primary-500/20 p-2 sm:p-4"
+                animate={{ y: [0, 15, 0], rotate: [0, -3, 0] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute top-8 sm:top-16 right-0 w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 bg-primary-500/10 backdrop-blur-sm rounded-2xl border border-primary-500/20 p-2 sm:p-4"
               >
                 <div className="w-full h-full bg-gradient-to-br from-primary-400/20 to-primary-600/20 rounded-xl flex items-center justify-center">
-                  <span className="text-primary-400 font-bold text-xs">Cloud</span>
+                  <span className="text-primary-400 font-bold text-xs sm:text-sm text-center leading-tight">Cloud</span>
                 </div>
               </motion.div>
 
               <motion.div
-                animate={{
-                  y: [0, -12, 0],
-                  rotate: [0, 2, 0]
-                }}
-                transition={{
-                  duration: 7,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 2
-                }}
-                className="absolute bottom-12 sm:bottom-16 left-4 sm:left-8 w-24 h-24 sm:w-32 sm:h-32 lg:w-36 lg:h-36 bg-primary-500/10 backdrop-blur-sm rounded-2xl border border-primary-500/20 p-2 sm:p-4"
+                animate={{ y: [0, -12, 0], rotate: [0, 2, 0] }}
+                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                className="absolute bottom-12 sm:bottom-16 left-4 sm:left-8 w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 bg-primary-500/10 backdrop-blur-sm rounded-2xl border border-primary-500/20 p-2 sm:p-4"
               >
                 <div className="w-full h-full bg-gradient-to-br from-primary-400/20 to-primary-600/20 rounded-xl flex items-center justify-center">
-                  <span className="text-primary-400 font-bold text-xs sm:text-sm">Full Stack</span>
+                  <span className="text-primary-400 font-bold text-xs sm:text-sm text-center leading-tight">Full Stack</span>
                 </div>
               </motion.div>
 
               <motion.div
-                animate={{
-                  y: [0, 18, 0],
-                  rotate: [0, -2, 0]
-                }}
-                transition={{
-                  duration: 9,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 3
-                }}
-                className="absolute bottom-0 right-4 sm:right-8 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-primary-500/10 backdrop-blur-sm rounded-2xl border border-primary-500/20 p-2 sm:p-4"
+                animate={{ y: [0, 18, 0], rotate: [0, -2, 0] }}
+                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+                className="absolute bottom-0 right-4 sm:right-8 w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 bg-primary-500/10 backdrop-blur-sm rounded-2xl border border-primary-500/20 p-2 sm:p-4"
               >
                 <div className="w-full h-full bg-gradient-to-br from-primary-400/20 to-primary-600/20 rounded-xl flex items-center justify-center">
-                  <span className="text-primary-400 font-bold text-xs">ML & AI</span>
+                  <span className="text-primary-400 font-bold text-xs sm:text-sm text-center leading-tight">ML & AI</span>
                 </div>
               </motion.div>
 
