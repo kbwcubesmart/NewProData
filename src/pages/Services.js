@@ -1,16 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { services } from '../data/services';
-import { Database, BarChart3, Code, Brain, Settings, CheckCircle, ArrowRight } from 'lucide-react';
+import {
+  Database,
+  BarChart3,
+  Code,
+  Brain,
+  Settings,
+  Building2,
+  Cpu,
+  Server,
+  CheckCircle,
+  ArrowRight
+} from 'lucide-react';
 
 const Services = () => {
   const iconMap = {
-    Database,
-    BarChart3,
-    Code,
-    Brain,
-    Settings
-  };
+  Database,
+  BarChart3,
+  Code,
+  Brain,
+  Settings,
+  Building2,
+  Cpu,
+  Server
+};
+  
+  
 
   return (
     <div className="min-h-screen pt-16">

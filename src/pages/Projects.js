@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { projects } from '../data/projects';
 import { Search, Filter, ExternalLink, Calendar, User, Code2 } from 'lucide-react';
@@ -216,11 +217,12 @@ const Projects = () => {
                       </ul>
                     </div>
 
-                    {/* Action Button */}
-                    <button className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center group">
+                    <Link
+                      to={`/projects/${project.id}`}
+                      className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center group">
                       View Details
-                      <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </button>
+                     <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </div>
                 </motion.div>
               ))}

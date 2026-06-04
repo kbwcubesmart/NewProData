@@ -102,5 +102,79 @@ export const services = [
       "Legacy system modernization",
       "24/7 technical support"
     ]
-  }
+  },
+  {
+  id: 6,
+  title: "Enterprise Application Development (Java + Spring Boot)",
+  description:
+    "Build scalable, secure, and enterprise-grade business applications using Java and Spring Boot frameworks designed for high availability and performance.",
+
+  icon: "Building2",
+
+  deliverables: [
+    "Enterprise web applications",
+    "RESTful API development",
+    "Microservices architecture",
+    "Spring Security implementation",
+    "Cloud-ready deployment"
+  ],
+
+  features: [
+    "Spring Boot development",
+    "Microservices architecture",
+    "REST API integration",
+    "Enterprise security",
+    "Cloud-native applications"
+  ]
+},
+
+{
+  id: 7,
+  title: "High Performance Software Engineering (C++)",
+  description:
+    "Develop ultra-fast, high-performance software systems for industries requiring speed, reliability, and low-latency processing.",
+
+  icon: "Cpu",
+
+  deliverables: [
+    "Performance optimized applications",
+    "Real-time processing engines",
+    "System-level development",
+    "Memory optimization",
+    "High-throughput solutions"
+  ],
+
+  features: [
+    "Real-time systems",
+    "Algorithm optimization",
+    "Embedded software",
+    "Multithreaded applications",
+    "Performance engineering"
+  ]
+},
+
+{
+  id: 8,
+  title: "Mainframe Modernization & Legacy Transformation (COBOL)",
+  description:
+    "Modernize legacy COBOL applications and mainframe environments while preserving critical business logic and ensuring business continuity.",
+
+  icon: "Server",
+
+  deliverables: [
+    "Legacy system assessment",
+    "COBOL modernization",
+    "Mainframe integration",
+    "Cloud migration strategy",
+    "Digital transformation roadmap"
+  ],
+
+  features: [
+    "COBOL maintenance",
+    "Mainframe modernization",
+    "Legacy transformation",
+    "System migration",
+    "Business process modernization"
+  ]
+}
 ];

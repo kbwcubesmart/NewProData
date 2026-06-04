@@ -2,6 +2,8 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ProjectDetails from "./pages/ProjectDetails";
+import ScrollToTop from "./components/ScrollToTop";
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -14,6 +16,7 @@ const Career = lazy(() => import('./pages/Career'));
 function App() {
   return (
     <Router>
+       <ScrollToTop />
       <div className="min-h-screen bg-white">
         <Navbar />
         <Suspense fallback={<div className="py-24 text-center text-gray-600">Loading…</div>}>
@@ -25,6 +28,7 @@ function App() {
             <Route path="/career" element={<Career />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/projects/:id" element={<ProjectDetails />} />
           </Routes>
         </Suspense>
         <Footer />
